@@ -16,23 +16,24 @@ useLayoutEffect(() =>{
   return (
    <SafeAreaView className="bg-white relative flex-1">
     {/* First Section */}
-    <View className="flex-row px-6 mt-8 items-center space-x-2">
+    <View className="flex-row px-6 mt-12 items-center space-x-2">
       <View className="w-16 h-16 rounded-full bg-black items-center justify-center">
-        <Text className="text-[#4DABB7] text-3xl font-semibold" >Go</Text>
+        <Animatable.Text animation="rubberBand" iterationCount="infinite" direction="alternate"
+        className="text-[#4DABB7] text-3xl font-semibold"
+        >Go</Animatable.Text>
       </View>
       {/* <Text className="text-[#2A2B4B] font-semibold text-3xl">Travel</Text> */}
-      <Animatable.Image source={Logo} className="w-20 h-[60px] object-cover mt-10 "  
-        animation="fadeIn"
-        easing="ease-in-out"
+      <Animatable.Image source={Logo} className="w-20 h-[60px] object-cover mt-2 "  
+        animation="lightSpeedIn" iterationCount="infinite" direction="alternate"
       />
     </View>
 
     {/* Section Section */}
-    <View className="px-6 space-y-3">
+    <View className="px-6 space-y-3 mt-7">
       <Text className="text-[#3C6072] text-[42px]">Enjoy the trip with</Text>
       <Text className="text-[#00BCC9] text-[38px] font-bold">Good Moments</Text>
 
-      <Text className="text-{#3C6072} text-base">
+      <Text className="text-{#3C6072} text-base bottom-3">
         Explore around Garu... Find the best Restaurances, Attraction places and Hotels.
 
       </Text>
@@ -42,7 +43,7 @@ useLayoutEffect(() =>{
     <View className="w-[400px] h-[400px] bg-[#E99265] rounded-full absolute -bottom-28 -right-36"></View>
     {/* Image container */}
     <View className="flex-1 relative items-center justify-center">
-      <Animatable.Image source={HeroImage} className="w-full h-full object-cover -mt-10"  
+      <Animatable.Image source={HeroImage} className="w-full h-full object-cover -mt-20"  
         animation="fadeIn"
         easing="ease-in-out"
       />
