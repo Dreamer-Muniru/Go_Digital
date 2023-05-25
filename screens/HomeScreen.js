@@ -29,11 +29,11 @@ useLayoutEffect(() =>{
     </View>
 
     {/* Section Section */}
-    <View className="px-6 space-y-3 mt-7">
+    <View className="px-6 space-y-3 mt-3">
       <Text className="text-[#3C6072] text-[42px]">Enjoy the trip with</Text>
-      <Text className="text-[#00BCC9] text-[38px] font-bold">Good Moments</Text>
+      <Text className="text-[#00BCC9] text-[34px] bottom-3 font-bold">Good Moments</Text>
 
-      <Text className="text-{#3C6072} text-base bottom-3">
+      <Text className="text-{#3C6072} text-base bottom-6">
         Explore around Garu... Find the best Restaurances, Attraction places and Hotels.
 
       </Text>

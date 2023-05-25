@@ -61,6 +61,7 @@ const Discover = ({navigation}) => {
                     setTr_lng(details?.geometry?.viewport?.northeast?.lng)
                 }}
                 query={{
+                    // Google API key
                     key: "AIzaSyDbaHp1Z8K_to2ll0CRQ-RLR5lTcR63ilw",
                     language: "en",
                 }}

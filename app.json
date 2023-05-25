@@ -3,6 +3,8 @@
     "name": "Go Digital",
     "slug": "GoDigital",
     "version": "1.0.1",
+    "privacy": "public",
+    "description": "An application created as part of Digital Garu initiative to allow peoples to find places",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -21,10 +23,16 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.muniru_dreamer.GoDigital"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "c741258e-e93b-4f9d-a9b2-c93f73029d47"
+      }
     }
   }
 }
