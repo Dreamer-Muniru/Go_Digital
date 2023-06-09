@@ -9,6 +9,7 @@ import { getPlacesData } from '../api';
 
 
 const Discover = ({navigation}) => {
+    // Setting initial states
     const [type, setType] = useState("restaurants")
     const [isLoading, setIsLoading] = useState(false)
     const [mainData, setMainData] = useState([])
@@ -17,11 +18,13 @@ const Discover = ({navigation}) => {
     const [tr_lat, setTr_lat] = useState(null)
     const [tr_lng, setTr_lng] = useState(null)
 
+    // Hidding header section of screen
     useLayoutEffect(() =>{
         navigation.setOptions({
           headerShown: false
         });
       }, []);
+
     useEffect(() =>{
         setIsLoading(true);
         getPlacesData(bl_lat, bl_lng, tr_lat, tr_lng, type).then(data =>{
@@ -46,7 +49,7 @@ const Discover = ({navigation}) => {
                     />
                 </View>
             </View>
-            {/* Search bar */}
+            {/* Search bar from Google Autocomplete API */}
             <View className="flex-row items-center bg-white mx-4 roundded-xl py-1 px-4 shadow-lg mt-4">
             <GooglePlacesAutocomplete
              GooglePlacesDetailsQuery={{fields: "geometry"}}
