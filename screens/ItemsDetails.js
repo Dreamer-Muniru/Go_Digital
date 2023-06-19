@@ -1,5 +1,6 @@
+import { StatusBar } from 'expo-status-bar';
 import React, { useLayoutEffect, useState, useEffect } from 'react'
-import { View, Text, SafeAreaView, ScrollView, TouchableOpacity, Image } from 'react-native'
+import { View, Text, SafeAreaView, ScrollView, TouchableOpacity, Linking, Image } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import { FontAwesome5 } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
@@ -15,7 +16,11 @@ const ItemsDetails = ({route}) => {
         });
       }, []);
     
-      console.log(data)
+    //   console.log(data)
+      const phone = () =>{
+        const url = data.phone
+        Linking.openURL(`tel:${url}`)
+      }
   return (
     <SafeAreaView className="flex-1 bg-white relative">
         <ScrollView className="flex-1 px-4 py-6">
@@ -152,13 +157,14 @@ const ItemsDetails = ({route}) => {
                 ):(
                 <></>
                 )}
-                <View className="mt-4 px-4 py-4 rounded-lg bg-[#06B2BE] items-center justify-center mb-12">
-                    <Text className="text-3xl font-semibold uppercase tracking-wider text-gray-100">
+                <TouchableOpacity onPress={phone} className="mt-4 px-4 py-4 rounded-lg bg-[#06B2BE] items-center justify-center mb-12">
+                    <Text  className="text-3xl font-semibold uppercase tracking-wider text-gray-100">
                         Book Now
                     </Text>
-                </View>
+                </TouchableOpacity>
             </View>
         </ScrollView>
+        <StatusBar style="auto" color="grey" />
     </SafeAreaView>
   )
 }

@@ -1,6 +1,6 @@
+import { StatusBar } from 'expo-status-bar';
 import { View, SafeAreaView, Text, Image, TouchableOpacity } from 'react-native'
 import React, { useLayoutEffect, useState } from 'react'
-import { HeroImage, Logo, Rocket, Enjoy } from '../index'
 import * as Animatable from 'react-native-animatable';
 import { Entypo } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
@@ -11,7 +11,9 @@ const HomeScreen = ({navigation}) => {
 
 useLayoutEffect(() =>{
   navigation.setOptions({
-    headerShown: false
+    headerShown: false,
+    backgroundColor: 'red',
+    shadowColor: '#f9fafd'
   })
 }, []);
 
@@ -21,31 +23,32 @@ useLayoutEffect(() =>{
     <View className="flex-row px-6 mt-12 items-center space-x-2">
       <View className="w-16 h-16 rounded-full bg-black items-center justify-center">
         {/* Added Animation the text 'GO' */}
-        <Animatable.Text animation="swing" iterationCount="infinite" direction="alternate"
+        <Animatable.Text animation="rubberBand" iterationCount="infinite" direction="alternate"
         className="text-[#4DABB7] text-3xl font-semibold"
         >Go</Animatable.Text>
       </View>
       {/* Added Animation the App Logo */}
-      <Animatable.Image source={Logo} className="w-20 h-[60px] object-cover mt-2 "  
+      <Animatable.Image source={require("../assets/logo.jpg")} className="w-[60px] h-[50px] object-cover mt-1 "  
         animation="pulse" easing="ease-in-out" iterationCount="infinite" direction="alternate"
       />
+      
     </View>
 
     {/* Section Section */}
     <View className="px-6 space-y-3 mt-1">
-      <View className="top-5">
+      <View className="top-1">
         <Text className="text-[#3C6072] text-[60px]">Enjoy the </Text>
       </View>
-      <View className="flex-row top-3">
+      <View className="flex-row top-[-10px]">
         <Text className="text-[#3C6072] text-[50px]">Trip </Text>
-        <Animatable.Image source={Rocket} animation="rubberBand" iterationCount="infinite" direction="alternate"
-          className="w-10 h-[40px] object-cover right-3 -bottom-3 "/>
+        <Animatable.Image source={require("../assets/rocket.png")} animation="rubberBand" iterationCount="infinite" direction="alternate"
+          className="w-[50px] h-[40px] object-cover right-3 -bottom-5 "/>
       </View>
-      <Text className="text-[#3C6072] top-1 text-[25px] font-bold">with</Text>
-      <Text className="text-[#00BCC9] text-[40px] bottom-3 font-bold" >Good Moments</Text>
+      <Text className="text-[#3C6072] top-[-20px] text-[25px] font-bold">with</Text>
+      <Text className="text-[#00BCC9] top-[-40px] text-[40px] bottom-3 font-bold" >Good Moments</Text>
    
 
-      <Text className="text-{#3C6072} text-base bottom-6 font-bold">
+      <Text className="text-{#3C6072} top-[-45px] text-base bottom-10 font-bold">
         Explore around the World... Find the best Restaurances, Attraction places and Hotels.
       </Text>
     </View>
@@ -56,7 +59,7 @@ useLayoutEffect(() =>{
     {/* <View className="w-[250px] h-[250px] bg-[#E99265] rounded-full absolute -bottom-10 -right-36"></View> */}
     {/* Image container */}
     <View className="flex-1 relative items-center justify-center">
-      <Animatable.Image source={HeroImage} className="w-[320px] h-[380px] object-cover left-1 bottom-20"  
+      <Animatable.Image source={require("../assets/hero.png")} className="w-[300px] h-[380px] object-cover left-1 bottom-20"  
         animation="fadeIn"
         easing="ease-in-out"
       />
@@ -73,7 +76,7 @@ useLayoutEffect(() =>{
     </TouchableOpacity>
 
     </View>
-
+    <StatusBar style="auto" color="grey" />
    </SafeAreaView>
   )
 }

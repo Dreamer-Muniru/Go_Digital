@@ -1,7 +1,8 @@
+import { StatusBar } from 'expo-status-bar';
 import React, { useLayoutEffect, useState, useEffect } from 'react'
 import { View, Text, SafeAreaView, Image, ScrollView, ActivityIndicator, TouchableOpacity } from 'react-native';
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
-import { Avata, Hotels, Restaurants, Attractions, NotFound } from '../index';
+import {  Hotels, Restaurants, Attractions, NotFound } from '../index';
 import MenuContainer from '../components/MenuContainer';
 import { FontAwesome5 } from '@expo/vector-icons';
 import ItemsContainer from '../components/ItemsContainer';
@@ -44,7 +45,7 @@ const Discover = ({navigation}) => {
                     <Text className="text-[#527283] text-[36px]">the beuty today</Text>
                 </View>
                 <View className="w-12 h-12 bg-grey-400 rounded-md items-center justify-center shadow">
-                    <Image source={Avata} 
+                    <Image source={require("../assets/avata.jpg")} 
                     className="w-full h-full rounded-md object-cover"
                     />
                 </View>
@@ -134,10 +135,10 @@ const Discover = ({navigation}) => {
                         ):( 
                         <>
                             <View className="w-full h-[400px] items-center space-y-8 justify-center">
-                                <Image source={NotFound}
+                                <Image source={require("../assets/NotFound.png")}
                                     className="w-32 h-32 object-cover"
                                 />
-                            <Text className="text-[#2C7279] text-[28px] font-bold">Opps.... No Data Found</Text>
+                            <Text className="text-[#2C7279] text-[28px] font-bold">Opps.... Omo, No Data Found</Text>
                         </View> 
                         </>
                         )}
@@ -146,7 +147,7 @@ const Discover = ({navigation}) => {
                  </ScrollView>
                  )}
          
-
+         <StatusBar style="auto" color="grey" />
         </SafeAreaView>
     )
 }
